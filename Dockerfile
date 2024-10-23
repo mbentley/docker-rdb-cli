@@ -9,7 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # install build dependencies
 RUN apt-get update &&\
-  apt-get install -y --no-install-recommends build-essential ca-certificates git
+  apt-get install -y --no-install-recommends build-essential ca-certificates git libssl-dev
 
 # git clone
 RUN cd /tmp &&\
@@ -17,6 +17,7 @@ RUN cd /tmp &&\
 
 # build librdb
 RUN cd /tmp/librdb &&\
+  export BUILD_TLS="yes" &&\
   make install
 
 
