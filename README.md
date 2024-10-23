@@ -2,6 +2,10 @@
 
 Docker image for [rdb-cli](https://github.com/redis/librdb)
 
+## Tags
+
+* `latest` - multi-arch for `amd64` and `arm64`
+
 ## Usage
 
 ```bash
